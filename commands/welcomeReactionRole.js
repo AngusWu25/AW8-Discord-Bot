@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     const b = message.guild.roles.get('585650820511563782'); // Administrator
     const c = message.guild.roles.get('585650850882519050'); // Developer
   
-    const embed = new RichEmbed()
+    const embed = new Discord.RichEmbed()
         .setTitle('Available Roles')
         .setDescription(`
          

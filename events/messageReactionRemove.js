@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = require("../index.js");
 const config = require("../botconfig.json");
 
-bot.on("messageReactionAdd" = async (client, messageReaction, user) => {
+bot.on("messageReactionRemove" = async (client, messageReaction, user) => {
 
     const message = messageReaction.message;
     const channel = message.guild.channels.find(c => c.name === 'announcements');
@@ -13,17 +13,16 @@ bot.on("messageReactionAdd" = async (client, messageReaction, user) => {
     const b = message.guild.roles.get('485987998165499914'); // Administrator
     const c = message.guild.roles.get('482192667766423561'); // Developer
 
-    // Adds/removes a user from a joinable role via the welcome
     if (['🇦', '🇧', '🇨'].includes(messageReaction.emoji.name) && message.channel.id === channel.id) {
         switch (messageReaction.emoji.name) {
             case '🇦':
-                member.addRole(a).catch(console.error);
+                member.removeRole(a).catch(console.error);
                 break;
             case '🇧':
-                member.addRole(b).catch(console.error);
+                member.removeRole(b).catch(console.error);
                 break;
             case '🇨':
-                member.addRole(c).catch(console.error);
+                member.removeRole(c).catch(console.error);
                 break;
             default:
                 break;

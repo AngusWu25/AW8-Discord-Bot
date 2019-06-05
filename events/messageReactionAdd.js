@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = require("../index.js");
 const config = require("../botconfig.json");
 
-bot.on("messageReactionAdd" = async (client, messageReaction, user) => {
+module.exports = async (client, messageReaction, user) => {
 
     const message = messageReaction.message;
     const channel = message.guild.channels.find(c => c.name === 'announcements');
@@ -29,4 +29,4 @@ bot.on("messageReactionAdd" = async (client, messageReaction, user) => {
                 break;
         }
     }
-});
+};

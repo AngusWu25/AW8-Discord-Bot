@@ -12,9 +12,9 @@ module.exports.run = async (client, message, args) => {
   
     await message.delete().catch(O_o => {});
   
-    const a = message.guild.roles.get('585617992549793822'); // Moderator
-    const b = message.guild.roles.get('585650820511563782'); // Administrator
-    const c = message.guild.roles.get('585650850882519050'); // Developer
+    const a = message.guild.roles.get('585617992549793822');
+    const b = message.guild.roles.get('585650820511563782');
+    const c = message.guild.roles.get('585650850882519050');
   
     const embed = new Discord.RichEmbed()
         .setTitle('Available Roles')

@@ -6,7 +6,7 @@ bot.on("messageReactionAdd", async (messageReaction, user) => {
 
     if (messageReaction.message.id == 585616911149170693){
         if(messageReaction.emoji.name == "headphones"){
-            user.addRole(585617992549793822);
+            user.addRole(messageReaction.guild.roles.find('name', 'Producer').id);
         }
     }
 });

@@ -3,7 +3,6 @@ const bot = require("../index.js");
 const config = require("../botconfig.json");
 
 bot.on("messageDelete", async(message) => {
-    console.log("message deleted");
 
     if (message.channel.type == 'text') {
         if (message.content.charAt(0) == config.prefix) return;

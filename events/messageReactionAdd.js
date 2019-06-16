@@ -2,8 +2,18 @@ const Discord = require('discord.js');
 const bot = require("../index.js");
 const config = require("../botconfig.json");
 
-bot.on("messageReactoinAdd", (messageReaction, user) => {
-    console.log(user.username + "reacted");
+bot.on("messageReactionAdd", (messageReaction, user) => {
+    
+    let roleName = messageReaction.emoji.name;
+    let role = messageREaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCaser());
+
+    if(role){
+        let member = messageReaction.message.guild.members.find(member => member.id === user.id);
+        if(member){
+            member.addRole(role.id);
+        }
+    }
+
     // if(!user) return;
     // if(user.bot) return;
     // if(!reaction.message.channel.guild) return;

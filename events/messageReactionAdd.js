@@ -16,15 +16,15 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
 
     if(!user) return;
     if(user.bot) return;
-    if(!reaction.message.channel.guild) return;
+    if(!messageReaction.message.channel.guild) return;
 
     let emojiname = ["smiley"];
     let rolename = ["smiley"];
 
     for(let n in emojiname){
-        if(reaction.emoji.name == emojiname[n]){
-            let role = reaction.message.guild.roles.find(r => r.name == rolename[n]);
-            reaction.message.guild.member(user).addRole(role).catch(console.error);
+        if(messageReaction.emoji.name == emojiname[n]){
+            let role = messageReaction.message.guild.roles.find(r => r.name == rolename[n]);
+            messageReaction.message.guild.member(user).addRole(role).catch(console.error);
         }
     }
 });

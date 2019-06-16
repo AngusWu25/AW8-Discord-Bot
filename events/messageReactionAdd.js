@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = require("../index.js");
 const config = require("../botconfig.json");
 
-bot.on("messageReactoinAdd", async(reaction, user) => {
+bot.on("messageReactoinAdd", async(messageReaction, user) => {
     if(!user) return;
     if(user.bot) return;
     if(!reaction.message.channel.guild) return;

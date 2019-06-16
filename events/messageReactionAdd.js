@@ -16,7 +16,7 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
 
     if(!user) return;
     if(user.bot) return;
-    if(!messageReaction.message.channel.guild) return;
+    //if(!messageReaction.message.channel.guild) return;
 
     let emojiname = ["smiley"];
     let rolename = ["smiley"];

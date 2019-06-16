@@ -7,7 +7,7 @@ bot.on("messageReactoinAdd", async(reaction, user) => {
     if(user.bot) return;
     if(!reaction.message.channel.guild) return;
 
-    let emojiname = [":smiley:", ":eyes:"];
+    let emojiname = ["smiley", "eyes"];
     let rolename = ["testing 1", "testing 2"];
 
     for(let n in emojiname){

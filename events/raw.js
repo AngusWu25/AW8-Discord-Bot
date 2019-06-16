@@ -12,7 +12,7 @@ bot.on("raw", event => {
             } else {
                 reactionChannel.fetchMessage(event.d.message_id)
                 .then(msg => {
-                    let msgReaction = msg.reactions.het(event.d.emoji.name + ":" + event.d.emoji.id);
+                    let msgReaction = msg.reactions.get(event.d.emoji.name + ":" + event.d.emoji.id);
                     let user = client.users.get(event.d.user_id);
                     bot.emit("messageReactionAdd", msgReaction, user);
                 })

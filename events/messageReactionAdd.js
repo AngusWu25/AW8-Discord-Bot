@@ -18,8 +18,8 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
     if(user.bot) return;
     if(!reaction.message.channel.guild) return;
 
-    let emojiname = ["smiley", "eyes"];
-    let rolename = ["testing 1", "testing 2"];
+    let emojiname = ["smiley"];
+    let rolename = ["smiley"];
 
     for(let n in emojiname){
         if(reaction.emoji.name == emojiname[n]){

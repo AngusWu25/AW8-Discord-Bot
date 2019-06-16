@@ -5,7 +5,7 @@ const config = require("../botconfig.json");
 bot.on("messageReactionAdd", (messageReaction, user) => {
     
     let roleName = messageReaction.emoji.name;
-    let role = messageReaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCaser());
+    let role = messageReaction.message.guild.roles.find(role => role.name.toLowerCase() === roleName.toLowerCase());
 
     if(role){
         let member = messageReaction.message.guild.members.find(member => member.id === user.id);

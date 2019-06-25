@@ -19,8 +19,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#FFFF00")
 
     questsub.send(qembed).then(message => {
-        message.react(":white_check_mark:")
-        message.react(":x:")
+        message.react(`:yes:`).then(message.react(`:no:`));
     })
     
 }

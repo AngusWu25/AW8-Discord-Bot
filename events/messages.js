@@ -16,7 +16,7 @@ bot.on("message", async message => {
         message.delete();
     }
 
-    if(message.content.charAt(0) == config.prefix) return;
+    if(message.content.charAt(0) != config.prefix) return;
     let args = message.content.slice(prefix.length).trim().split(/ +/);
     let cmd = args.shift().toLowerCase();
 

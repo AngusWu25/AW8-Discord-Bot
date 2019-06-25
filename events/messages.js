@@ -7,9 +7,6 @@ bot.on("message", async message => {
     if (message.channel.type === "dm") return;
     let prefix = config.prefix;
 
-    let args = message.content.slice(prefix.length).trim().split(/ +/);
-    let cmd = args.shift().toLowerCase();
-
     let bannedWords = ['walkercom', 'walker.com', 'walker com', 'w41k3rc0m', 'w41k3r.com', 'w41k3r com'];
     let foundInText = false;
     for (var i in bannedWords) {
@@ -18,6 +15,10 @@ bot.on("message", async message => {
     if (foundInText) {
         message.delete();
     }
+
+    if(message.content.charAt(0) == config.prefix) return;
+    let args = message.content.slice(prefix.length).trim().split(/ +/);
+    let cmd = args.shift().toLowerCase();
 
     let command;
     if (bot.commands.has(cmd)) {

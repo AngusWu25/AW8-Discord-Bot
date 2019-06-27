@@ -9,7 +9,7 @@ module.exports.command = {
 }
 
 module.exports.run = async (bot, message, args) => {
-    message.guild.channels.forEach(channel => channel.fetchMessages({ limit: 100 })
+    message.guild.channels.forEach(channel => channel.fetchMessages()
         .then(messages => console.log(`Received ${messages.size} messages`))
         .catch(console.error));
 }

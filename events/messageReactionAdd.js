@@ -14,6 +14,7 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
     //     }
     // }
 
+    console.log("emoji");
     if(!user) return;
     if(user.bot) return;
     //if(!messageReaction.message.channel.guild) return;

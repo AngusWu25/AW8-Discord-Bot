@@ -19,7 +19,7 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
     if(user.bot) return;
     //if(!messageReaction.message.channel.guild) return;
 
-    let emojiname = [😃];
+    let emojiname = ["😃"];
     let rolename = ["smiley"];
 
     for(let n in emojiname){

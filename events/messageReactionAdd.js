@@ -19,6 +19,11 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
     if(user.bot) return;
     //if(!messageReaction.message.channel.guild) return;
 
+    if(messageReaction.message.id == "578033957615173640" && messageReaction.emoji.name == `yes`){
+        console.log("rules read");
+        messageReaction.message.guild.member(user).addRole(messageReaction.message.guild.roles.find(`smiley`)).catch(console.error);
+    }
+
     let emojiname = ["smiley"];
     let rolename = ["smiley"];
 

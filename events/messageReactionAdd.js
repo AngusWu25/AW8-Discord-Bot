@@ -19,11 +19,12 @@ bot.on("messageReactionAdd", (messageReaction, user) => {
     if(user.bot) return;
     //if(!messageReaction.message.channel.guild) return;
 
-    let emojiname = ["smiley"];
+    let emojiname = [😃];
     let rolename = ["smiley"];
 
     for(let n in emojiname){
         if(messageReaction.emoji.name == emojiname[n]){
+            console.log("matched emoji");
             let role = messageReaction.message.guild.roles.find(r => r.name == rolename[n]);
             messageReaction.message.guild.member(user).addRole(role).catch(console.error);
         }

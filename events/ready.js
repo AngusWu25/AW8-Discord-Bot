@@ -5,7 +5,7 @@ bot.on("ready", async () => {
     console.log('bot is online!');
     bot.user.setActivity("New Profile Pic Eh", {type: "WATCHING"});
 
-    bot.channels.forEach(channel => channel.fetchMessages({ limit: 100 })
-        .then(messages => console.log(`Received ${messages.size} messages`))
-        .catch(console.error));
+    // bot.channels.forEach(channel => channel.fetchMessages({ limit: 100 })
+    //     .then(messages => console.log(`Received ${messages.size} messages`))
+    //     .catch(console.error));
 });

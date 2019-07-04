@@ -1,24 +1,30 @@
 const Discord = require('discord.js');
 const bot = require("../index.js");
 const config = require("../botconfig.json");
+const events = {
+	MESSAGE_REACTION_ADD: 'messageReactionAdd',
+	MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
+};
 
-bot.on("raw", event => {
-    const eventName = event.t;
-    if(eventName === "MESSAGE_REACTION_ADD"){
-        if(event.d.message_id === "589641614385741831"){
-            let reactionChannel = bot.channels.get(event.d.channel_id);
-            if(reactionChannel.messages.has(event.d.message_id)){
-                return;
-            } else {
-                reactionChannel.fetchMessage(event.d.message_id)
-                .then(msg => {
-                    let msgReaction = msg.reactions.get(event.d.emoji.name + ":" + event.d.emoji.id);
-                    console.log(msgReaction);
-                    let user = bot.users.get(event.d.user_id);
-                    bot.emit("messageReactionAdd", msgReaction, user);
-                })
-                .catch(err => console.log(err));
-            }
-        }
-    }
+bot.on('raw', async event => {
+	if (!events.hasOwnProperty(event.t)) return;
+
+	if(event.t == 'MESSAGE_REACTION_ADD' || event.t == 'MESSAGE_REACTION_REMOVE'){
+		const { d: data } = event;
+		const user = bot.users.get(data.user_id);
+		const channel = bot.channels.get(data.channel_id) || await user.createDM();
+
+		if (channel.messages.has(data.message_id)) return;
+
+		const message = await channel.fetchMessage(data.message_id);
+		const emojiKey = (data.emoji.id) ? `${data.emoji.name}:${data.emoji.id}` : data.emoji.name;
+		let messageReaction = message.reactions.get(emojiKey);
+
+		if (!messageReaction) {
+			const emoji = new Discord.Emoji(bot.guilds.get(data.guild_id), data.emoji);
+			messageReaction = new Discord.MessageReaction(message, emoji, 1, data.user_id === bot.user.id);
+		}
+
+		bot.emit(events[event.t], messageReaction, user);
+	}
 });

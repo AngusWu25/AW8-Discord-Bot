@@ -11,6 +11,7 @@ module.exports.command = {
 module.exports.run = async (bot, message, args) => {
     let user = message.guild.member(message.mentions.users.first());
     if (!user) return message.channel.send("Could not find user").then(msg => msg.delete(3000));
+    console.log("prep roast");
 
     let roast = ["You have the right to remain silent because whatever you say will probably be stupid anyway.",
                 "Your family tree must be a cactus ‘cause you’re all a bunch of pricks.",

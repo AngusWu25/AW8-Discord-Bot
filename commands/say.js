@@ -11,6 +11,6 @@ module.exports.command = {
 module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Invalid Permissions");
     let botmessage = args.join(" ");
-    message.delete().catch();
+    message.delete();
     message.channel.send(botmessage);
 }

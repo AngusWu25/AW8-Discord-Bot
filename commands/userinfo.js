@@ -36,9 +36,6 @@ module.exports.run = async (bot, message, args) => {
         }
       }
 
-    let roleList = user.roles.map(r => r);
-    let roleListAlt = roleList.shift().join(" , ");
-
     let serverembed = new Discord.RichEmbed()
     .setDescription(message.mentions.users.first().tag)
     .setColor("#25c9f7")
@@ -47,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("User Nickname:", user.nickname)
     .addField("Join Position:", joinPos(message.mentions.users.first().id, message.guild))
     .addField("Joined Server:", time)
-    .addField("Roles:", roleList)
+    .addField("Roles:", user.roles.map(r => r).join(" | "))
     .setFooter(`User ID: ${user.id}`)
 
     return message.channel.send(serverembed);

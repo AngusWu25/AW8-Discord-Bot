@@ -9,6 +9,13 @@ module.exports.command = {
 }
 
 module.exports.run = async (bot, message, args) => {
+
+  if(message.channel.name != 'bot-commands'){
+    let msg = 'Please use this command in <#585620915065454623>';
+    message.channel.send(msg).then(msg => msg.delete(5000));
+    return;
+  }
+  
     let user = message.guild.member(message.mentions.users.first());
     if (!user) return message.channel.send("Could not find user").then(msg => msg.delete(3000));
 

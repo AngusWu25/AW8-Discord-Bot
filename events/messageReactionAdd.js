@@ -114,6 +114,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     }
     if(messageReaction.message.id == thanksID && messageReaction.emoji.name == `yes`){
         messageReaction.message.guild.channels.find(c => c.name === 'welcome').permissionOverwrites.get(user.id).delete();
+        messageReaction.message.guild.channels.find(c => c.name === 'thanks-for-reading-the-rules').permissionOverwrites.get(user.id).delete();
         messageReaction.message.guild.member(user).addRole(rulesRead).catch(console.error);
         messageReaction.message.clearReactions();
         messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));

@@ -14,11 +14,11 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     const expert = messageReaction.message.guild.roles.get('595682636173803546');
     const producer = messageReaction.message.guild.roles.get('585617992549793822');
     const yes = '590400988633104404';
-    const one = '596184203771772950';
-    const two = '596184274651316252';
-    const three = '596184317714104336';
-    const four = '596184360667840522';
-    const five = '596184400715186192';
+    const one = '596886792142323732';
+    const two = '596886792276410378';
+    const three = '596886792226078761';
+    const four = '596887743431180298';
+    const five = '596888624239345684';
     const welcomeID = '595107904760184832';
     const r1ID = '595104608171589642';
     const r2ID = '595105034686169109';
@@ -26,11 +26,12 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     const r4ID = '595105332477427752';
     const r5ID = '595105438673010689';
     const attID = '595109531252424704';
-    const levelMsg = '595710477959561282';
     const q1ID = '595111925550153738';
     const q2ID = '595112782186151937';
     const q3ID = '595113286949797904';
     const thanksID = '595118197569486878';
+    const levelID = '597221346061320262';
+    const prodID = '597222994825314305';
 
     //welcome message
     if(messageReaction.message.id == welcomeID && messageReaction.emoji.name == `yes`){
@@ -69,7 +70,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
     }
     if(messageReaction.message.id == q1ID){
-        if(messageReaction.emoji.name == `appletwo`){
+        if(messageReaction.emoji.name == `option2`){
             messageReaction.message.guild.channels.find(c => c.name === 'question-two').overwritePermissions(user, { VIEW_CHANNEL: true });
             messageReaction.message.guild.channels.find(c => c.name === 'question-one').permissionOverwrites.get(user.id).delete();
         }
@@ -81,7 +82,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
     }
     if(messageReaction.message.id == q2ID){
-        if(messageReaction.emoji.name == `appleone`){
+        if(messageReaction.emoji.name == `option1`){
             messageReaction.message.guild.channels.find(c => c.name === 'question-three').overwritePermissions(user, { VIEW_CHANNEL: true });
             messageReaction.message.guild.channels.find(c => c.name === 'question-two').permissionOverwrites.get(user.id).delete();
         }
@@ -93,7 +94,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
     }
     if(messageReaction.message.id == q3ID){
-        if(messageReaction.emoji.name == `appleone`){
+        if(messageReaction.emoji.name == `option1`){
             messageReaction.message.guild.channels.find(c => c.name === 'thanks-for-reading-the-rules').overwritePermissions(user, { VIEW_CHANNEL: true });
             messageReaction.message.guild.channels.find(c => c.name === 'welcome').overwritePermissions(user, { VIEW_CHANNEL: false });
             messageReaction.message.guild.channels.find(c => c.name === 'rule-one').permissionOverwrites.get(user.id).delete();
@@ -119,9 +120,55 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     }
 
     //self roles
-    if(messageReaction.message.id == levelMsg && messageReaction.emoji.name == `smile`){
-        console.log("casual");
+    if(messageReaction.message.id == levelID && messageReaction.emoji.name == `option1`){
         messageReaction.message.guild.member(user).addRole(casual).catch(console.error);
+        if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682587180138518')){
+            console.log("remove enthusiast");
+            messageReaction.message.guild.member(user).removeRole(enthusiast).catch(console.error);
+        }
+        if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682636173803546')){
+            console.log("remove expert");
+            messageReaction.message.guild.member(user).removeRole(expert).catch(console.error);
+        }
     }
-
+    if(messageReaction.message.id == levelID && messageReaction.emoji.name == `option2`){
+        messageReaction.message.guild.member(user).addRole(enthusiast).catch(console.error);
+        if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682393017548866')){
+            messageReaction.message.guild.member(user).removeRole(casual).catch(console.error);
+        }
+        if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682636173803546')){
+            messageReaction.message.guild.member(user).removeRole(expert).catch(console.error);
+        }
+    }
+    if(messageReaction.message.id == levelID && messageReaction.emoji.name == `option3`){
+        messageReaction.message.guild.member(user).addRole(expert).catch(console.error);
+        if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682393017548866')){
+            messageReaction.message.guild.member(user).removeRole(casual).catch(console.error);
+        }
+        if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682587180138518')){
+            messageReaction.message.guild.member(user).removeRole(enthusiast).catch(console.error);
+        }
+    }
+    if(messageReaction.message.id == prodID && messageReaction.emoji.name == `K391`){
+        messageReaction.message.guild.member(user).addRole(producer).catch(console.error);
+    }
+    if(messageReaction.message.channel.name == 'question-submissions'){
+        if(!messageReaction.message.guild.member(user).roles.find(r => r.id == '577128591410855938')) return;
+        if(messageReaction.emoji.name == `yes`){
+            let array = messageReaction.message.content.split(' ');
+            let user = array[0];
+            let question = messageReaction.message.content.substr(messageReaction.message.content.indexOf(" ") + 1);
+            let qembed = new Discord.RichEmbed()
+                .setTitle("Question")
+                .setDescription(question)
+                .addField('From', `${user}`)
+                .setColor("#FFD700")
+            let channel = messageReaction.message.guild.channels.find(c => c.name === 'questions-and-answers');
+            channel.send(qembed);
+            messageReaction.message.delete();
+        }
+        if(messageReaction.emoji.name == `no`){
+            messageReaction.message.delete();
+        }
+    }
 });

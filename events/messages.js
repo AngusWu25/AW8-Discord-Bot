@@ -3,7 +3,6 @@ const bot = require("../index.js")
 const config = require("../botconfig.json");
 
 bot.on("message", async message => {
-    console.log("message: " + message);
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
     let prefix = config.prefix;

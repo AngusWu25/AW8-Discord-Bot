@@ -4,8 +4,7 @@ module.exports.command = {
     name: "delete",
     aliases: ["d"],
     description: "delete messages",
-    category: "",
-    usage: "delete #"
+    usage: "!delete [#]"
 }
 
 module.exports.run = async (bot, message, args) => {

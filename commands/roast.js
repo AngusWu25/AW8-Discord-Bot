@@ -4,11 +4,12 @@ module.exports.command = {
     name: "roast",
     aliases: ["r"],
     description: "who doesn't like to have some fun, roast your friends!",
-    category: "",
-    usage: "roast @user"
+    usage: "!roast [@user]"
 }
 
 module.exports.run = async (bot, message, args) => {
+    message.delete();
+    
     let user = message.guild.member(message.mentions.users.first());
     if (!user) return message.channel.send("Could not find user").then(msg => msg.delete(3000));
 

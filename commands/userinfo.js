@@ -3,13 +3,13 @@ const Discord = require("discord.js");
 module.exports.command = {
   name: "userinfo",
   aliases: ["ui"],
-  description: "shows user info",
-  category: "",
-  usage: "userinfo @user"
+  description: "show user's info",
+  usage: "!userinfo [@user]"
 }
 
 module.exports.run = async (bot, message, args) => {
-
+  message.delete();
+  
   if(message.channel.name != 'bot-commands'){
     let msg = 'Please use this command in <#585620915065454623>';
     message.channel.send(msg).then(msg => msg.delete(5000));

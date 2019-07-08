@@ -1,14 +1,15 @@
 const Discord = require("discord.js");
 
 module.exports.command = {
-        name: "",
+        name: "selfrolesetup",
         aliases: ["srs"],
-        description: "",
-        category: "",
-        usage: ""
+        description: "ignore, only used for bot development",
+        usage: "!srs"
 }
 
 module.exports.run = async (bot, message, args) => {
+    message.delete();
+    
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Invalid Permissions");
     
     const one = '596886792142323732';

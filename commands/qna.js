@@ -3,13 +3,13 @@ const Discord = require("discord.js");
 module.exports.command = {
     name: "qna",
     aliases: ["qna"],
-    description: "delete messages",
-    category: "",
-    usage: "delete #"
+    description: "submit a question you have for AWT",
+    usage: "!qna [question]"
 }
 
 module.exports.run = async (bot, message, args) => {
-
+    message.delete();
+    
     if(message.channel.name != 'bot-commands'){
         let msg = 'Please use this command in <#585620915065454623>';
         message.channel.send(msg).then(msg => msg.delete(5000));

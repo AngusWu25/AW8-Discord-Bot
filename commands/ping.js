@@ -3,13 +3,13 @@ const Discord = require("discord.js");
 module.exports.command = {
         name: "ping",
         aliases: ["p"],
-        description: "ping to see latency",
-        category: "",
-        usage: "ping"
+        description: "fetch latency",
+        usage: "!ping"
 }
 
 module.exports.run = async (bot, message, args) => {
-
+    message.delete();
+    
     if(message.channel.name != 'bot-commands'){
         let msg = 'Please use this command in <#585620915065454623>';
         message.channel.send(msg).then(msg => msg.delete(5000));

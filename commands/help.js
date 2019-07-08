@@ -8,8 +8,7 @@ module.exports.command = {
 }
 
 module.exports.run = async (bot, message, args) => {
-    message.delete();
-
+    
     if (message.member.hasPermission("MANAGE_MESSAGES")){
         if(message.channel.name != 'control-room'){
             let msg = 'Admins please use this command in <#577229976852496392>';

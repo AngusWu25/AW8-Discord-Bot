@@ -8,7 +8,6 @@ module.exports.command = {
 }
 
 module.exports.run = async (bot, message, args) => {
-    message.delete();
     
     if(message.channel.name != 'bot-commands'){
         let msg = 'Please use this command in <#585620915065454623>';

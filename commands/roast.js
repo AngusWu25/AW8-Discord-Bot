@@ -8,7 +8,6 @@ module.exports.command = {
 }
 
 module.exports.run = async (bot, message, args) => {
-    message.delete();
     
     let user = message.guild.member(message.mentions.users.first());
     if (!user) return message.channel.send("Could not find user").then(msg => msg.delete(3000));

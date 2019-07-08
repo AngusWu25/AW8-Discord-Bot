@@ -8,7 +8,6 @@ module.exports.command = {
 }
 
 module.exports.run = async (bot, message, args) => {
-    message.delete();
     
     let quote = ["Always look on the bright side! That way the sun can blind you so you can’t see your problems.",
                 "Having a bad day? Just carry an onion in your pocket so people won’t know why you’re really crying.",

@@ -8,9 +8,8 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     if(!user) return;
     if(user.bot) return;
 
-    let welcomeMessage = [`Welcome! <@${user.id}>`,
-                        `Look who I just scanned... <@${user.id}> Welcome!`,
-                        `A new member has been detected! Welcome <@${user.id}>`,
+    let welcomeMessages = [`Look who I just scanned... <@${user.id}> Welcome!`,
+                        `A new member has been detected! Welcome <@${user.id}>!`,
                         ]
     const rulesRead = messageReaction.message.guild.roles.get('585650850882519050');
     const casual = messageReaction.message.guild.roles.get('595682393017548866');
@@ -122,7 +121,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         messageReaction.message.guild.member(user).addRole(rulesRead).catch(console.error);
         messageReaction.message.clearReactions();
         messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-        messageReaction.message.guild.channels.find(c => c.name === 'general').send(`Welcome! <@${user.id}>`)
+        messageReaction.message.guild.channels.find(c => c.name === 'general').send(welcomeMessages[Math.floor(Math.random() * (welcomeMessages.length + 1))])
     }
 
     //self roles

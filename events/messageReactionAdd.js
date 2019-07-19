@@ -118,6 +118,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         messageReaction.message.guild.member(user).addRole(rulesRead).catch(console.error);
         messageReaction.message.clearReactions();
         messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+        messageReaction.message.guild.channels.find(c => c.name === 'general').send(`Welcome ! <@${user.id}>`)
     }
 
     //self roles

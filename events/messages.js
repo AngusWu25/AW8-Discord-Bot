@@ -7,7 +7,7 @@ bot.on("message", async message => {
     if (message.channel.type === "dm") return;
     let prefix = config.prefix;
 
-    let bannedWords = ['walkercom', 'walker.com', 'walker com', 'w41k3rc0m', 'w41k3r.com', 'w41k3r com'];
+    let bannedWords = ['walkercom', 'walker.com', 'walker com', 'w41k3rc0m', 'w41k3r.com', 'w41k3r com', 'w41k3r'];
     let foundInText = false;
     for (var i in bannedWords) {
         if (!message.member.hasPermission("MANAGE_MESSAGES") && message.content.toLowerCase().includes(bannedWords[i].toLowerCase())) foundInText = true;

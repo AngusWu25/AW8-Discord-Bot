@@ -6,7 +6,7 @@ bot.on("message", async message => {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
     let prefix = config.prefix;
-console.log("bans:");
+
     let bannedWords = ['walkercom', 'walker.com', 'walker com', 'w41k3rc0m', 'w41k3r.com', 'w41k3rcom', 'w41k3r'];
     let foundInText = false;
     for (var i in bannedWords) {
@@ -14,6 +14,7 @@ console.log("bans:");
     }
     if (foundInText) {
         message.delete();
+        console.log("ban");
     }
 
     if(message.content.charAt(0) != config.prefix) return;

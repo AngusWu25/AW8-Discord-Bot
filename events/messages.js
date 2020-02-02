@@ -12,7 +12,7 @@ bot.on("message", async message => {
     for (var i in bannedWords) {
         if (!message.member.hasPermission("MANAGE_MESSAGES") && message.content.toLowerCase().includes(bannedWords[i].toLowerCase())) foundInText = true;
     }
-    if (foundInText) {
+    if (foundInText = true) {
         message.delete();
         console.log("ban");
     }

@@ -14,7 +14,6 @@ bot.on("message", async message => {
     }
     if (foundInText = true) {
         message.delete();
-        console.log("ban");
     }
 
     if(message.content.charAt(0) != config.prefix) return;

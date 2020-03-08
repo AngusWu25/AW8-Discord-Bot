@@ -20,8 +20,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor('#90FF00')
         .setTitle('Location Submission')
         .setDescription(args.join(" "))
-        .addField('Submitter:', `<@${message.author.id}>`)
-        .setFooter("Submitter" + message.author.tag)
+        .setFooter("Submitter: " + message.author.tag)
     
     return message.channel.send(embed);
 }

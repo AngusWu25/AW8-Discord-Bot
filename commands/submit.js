@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle('Location Submission')
         .setDescription(args.join(" "))
         .addField('Submitter:', `<@${message.author.id}>`)
-        .setFooter("Submitter" + `<@${message.author.id}>`)
+        .setFooter("Submitter" + message.mentions.users.first().tag)
     
     return message.channel.send(embed);
 }

@@ -54,5 +54,5 @@ bot.on('messageReactionRemove', (messageReaction, user) => {
   }
   if(messageReaction.message.id == vocitusID && messageReaction.emoji.name == `yes`){
     messageReaction.message.guild.member(user).removeRole(vocitus).catch(console.error);
-}
+  }
 });

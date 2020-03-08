@@ -10,7 +10,7 @@ module.exports.command = {
 module.exports.run = async (bot, message, args) => {
     message.delete();
     
-    if(message.channel.parent.ID != '686068077460455476'){
+    if(message.channel.parent.name != 'Project Vocitus'){
         let msg = 'Please use this command in one of the "Project Vocitus" channels';
         message.channel.send(msg).then(msg => msg.delete(5000));
         return;

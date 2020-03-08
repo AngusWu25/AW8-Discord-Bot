@@ -12,14 +12,15 @@ module.exports.run = async (bot, message, args) => {
         let msg = 'Please use this command in one of the "Project Vocitus" channels';
         message.channel.send(msg).then(msg => msg.delete(5000));
         return;
-        }
+    }
+
+    message.delete();
+
     let embed = new Discord.RichEmbed()
         .setColor('#90FF00')
         .setTitle('Location Submission')
         .setDescription(args.join(" "))
         .addField('Submitter:', `<@${message.author.id}>`)
     
-    message.delete();
     return message.channel.send(embed);
-
 }

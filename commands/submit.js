@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, args) => {
 
     let embed = new Discord.RichEmbed()
         .setColor('#90FF00')
-        .setTitle(args.join(" "))
-        //.setDescription(args.join(" "))
+        //.setTitle(args.join(" "))
+        .setDescription(args.join(" "))
         .setFooter("Submitted by " + message.author.tag)
     
     return message.channel.send(embed);

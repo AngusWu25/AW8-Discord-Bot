@@ -27,12 +27,12 @@ bot.on('messageReactionRemove', (messageReaction, user) => {
     const r5ID = '595105438673010689';
     const attID = '595109531252424704';
     const q1ID = '595111925550153738';
-  const q2ID = '595112782186151937';
-  const q3ID = '595113286949797904';
-  const thanksID = '595118197569486878';
-  const levelID = '597221346061320262';
-  const prodID = '597222994825314305';
-  const vocitusID = '686303443555450967';
+    const q2ID = '595112782186151937';
+    const q3ID = '595113286949797904';
+    const thanksID = '595118197569486878';
+    const levelID = '597221346061320262';
+    const prodID = '597222994825314305';
+    const vocitusID = '686303443555450967';
 	
 	if(messageReaction.message.id == levelID && messageReaction.emoji.name == `option1`){
 		if(messageReaction.message.guild.member(user).roles.find(r => r.id == '595682393017548866')){

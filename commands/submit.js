@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.command = {
-        name: "submit",
-        aliases: ["sm"],
-        description: "submit a location's coordinates",
-        usage: "!submit"
+    name: "submit",
+    aliases: ["sm"],
+    description: "submit a location's coordinates",
+    usage: "!submit"
 }
 
 module.exports.run = async (bot, message, args) => {
@@ -14,7 +14,8 @@ module.exports.run = async (bot, message, args) => {
         return;
     }
 
-    message.delete();
+    //message.delete();
+    message.channel.bulkDelete(1);
 
     let embed = new Discord.RichEmbed()
         .setColor('#90FF00')

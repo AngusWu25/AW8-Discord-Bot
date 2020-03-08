@@ -16,6 +16,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     const enthusiast = messageReaction.message.guild.roles.get('595682587180138518');
     const expert = messageReaction.message.guild.roles.get('595682636173803546');
     const producer = messageReaction.message.guild.roles.get('585617992549793822');
+    const vocitus = messageReaction.message.guild.roles.get('686226275853271050');
     const yes = '590400988633104404';
     const one = '596886792142323732';
     const two = '596886792276410378';
@@ -35,6 +36,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     const thanksID = '595118197569486878';
     const levelID = '597221346061320262';
     const prodID = '597222994825314305';
+    const vocitusID = '686303443555450967';
 
     //welcome message
     if(messageReaction.message.id == welcomeID && messageReaction.emoji.name == `yes`){
@@ -175,5 +177,8 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         if(messageReaction.emoji.name == `no`){
             messageReaction.message.delete();
         }
+    }
+    if(messageReaction.message.id == vocitusID && messageReaction.emoji.name == `yes`){
+        messageReaction.message.guild.member(user).addRole(vocitus).catch(console.error);
     }
 });

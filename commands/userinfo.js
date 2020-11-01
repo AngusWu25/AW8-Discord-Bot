@@ -34,18 +34,18 @@ module.exports.run = async (bot, message, args) => {
   //    if (arr[i].id == ID) return i + 1;
   //  }
   //}
-  console.log(user.roles.map(r => r));
+  console.log(user.roles.map(r => r.name));
 
   let serverembed = new Discord.RichEmbed()
     .setDescription(message.mentions.users.first().tag)
     .setColor("#25c9f7")
     .setThumbnail(message.mentions.users.first().avatarURL)
+    //.addField("Status:", user.presence.status)
     .addField("User Nickname:", user.nickname)
+    //.addField("Join Position:", joinPos(message.mentions.users.first().id, message.guild)) after nickname
     .addField("Joined Server:", time)
     .addField("Roles:", user.roles.map(r => r).join(" | "))
     .setFooter(`User ID: ${user.id}`)
 
   return message.channel.send(serverembed);
-  //.addField("Status:", user.presence.status) after thumb
-  //.addField("Join Position:", joinPos(message.mentions.users.first().id, message.guild)) after nickname
 }

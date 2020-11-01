@@ -34,7 +34,6 @@ module.exports.run = async (bot, message, args) => {
   //    if (arr[i].id == ID) return i + 1;
   //  }
   //}
-  console.log(user.roles.map(r => r.name));
 
   let serverembed = new Discord.RichEmbed()
     .setDescription(message.mentions.users.first().tag)

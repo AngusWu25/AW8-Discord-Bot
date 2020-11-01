@@ -39,12 +39,12 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(message.mentions.users.first().tag)
     .setColor("#25c9f7")
     .setThumbnail(message.mentions.users.first().avatarURL)
-    //.addField("Status:", user.presence.status)
     .addField("User Nickname:", user.nickname)
-    //.addField("Join Position:", joinPos(message.mentions.users.first().id, message.guild))
     .addField("Joined Server:", time)
     .addField("Roles:", user.roles.slice(1).map(r => r).join(" | "))
     .setFooter(`User ID: ${user.id}`)
 
   return message.channel.send(serverembed);
+  //.addField("Status:", user.presence.status) after thumb
+  //.addField("Join Position:", joinPos(message.mentions.users.first().id, message.guild)) after nickname
 }

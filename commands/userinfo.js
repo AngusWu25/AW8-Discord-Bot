@@ -34,6 +34,7 @@ module.exports.run = async (bot, message, args) => {
   //    if (arr[i].id == ID) return i + 1;
   //  }
   //}
+  console.log(user.roles.map(r => r));
 
   let serverembed = new Discord.RichEmbed()
     .setDescription(message.mentions.users.first().tag)
@@ -41,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(message.mentions.users.first().avatarURL)
     .addField("User Nickname:", user.nickname)
     .addField("Joined Server:", time)
-    .addField("Roles:", user.roles.slice(1).map(r => r).join(" | "))
+    .addField("Roles:", user.roles.map(r => r).join(" | "))
     .setFooter(`User ID: ${user.id}`)
 
   return message.channel.send(serverembed);

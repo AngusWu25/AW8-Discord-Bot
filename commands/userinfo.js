@@ -26,14 +26,14 @@ module.exports.run = async (bot, message, args) => {
   let month = (date.getMonth() + 1 < 10) ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
   let time = hr + ":" + min + ":" + sec + " " + dt + "/" + month + "/" + date.getFullYear();
 
-  let joinPos = (ID, guild) => {
-    let arr = guild.members.array();
-    arr.sort((a, b) => a.joinedAt - b.joinedAt);
+  //let joinPos = (ID, guild) => {
+  //  let arr = guild.members.array();
+  //  arr.sort((a, b) => a.joinedAt - b.joinedAt);
 
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].id == ID) return i + 1;
-    }
-  }
+  //  for (let i = 0; i < arr.length; i++) {
+  //    if (arr[i].id == ID) return i + 1;
+  //  }
+  //}
 
   let serverembed = new Discord.RichEmbed()
     .setDescription(message.mentions.users.first().tag)

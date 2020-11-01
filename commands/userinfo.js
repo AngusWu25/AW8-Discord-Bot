@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("User Nickname:", user.nickname)
     //.addField("Join Position:", joinPos(message.mentions.users.first().id, message.guild)) after nickname
     .addField("Joined Server:", time)
-    .addField("Roles:", user.roles.map(r => r).join(" | "))
+    .addField("Roles:", user.roles.filter(r => r.name !== '@everyone').map(r => r).join(" | "))
     .setFooter(`User ID: ${user.id}`)
 
   return message.channel.send(serverembed);

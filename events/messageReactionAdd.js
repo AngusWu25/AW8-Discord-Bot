@@ -44,79 +44,79 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         messageReaction.message.clearReactions();
         messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
     }
-    if(messageReaction.message.id == r1ID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.channels.find(c => c.name === 'rule-two').overwritePermissions(user, { VIEW_CHANNEL: true });
-        messageReaction.message.clearReactions();
-        messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-    }
-    if(messageReaction.message.id == r2ID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.channels.find(c => c.name === 'rule-three').overwritePermissions(user, { VIEW_CHANNEL: true });
-        messageReaction.message.clearReactions();
-        messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-    }
-    if(messageReaction.message.id == r3ID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.channels.find(c => c.name === 'rule-four').overwritePermissions(user, { VIEW_CHANNEL: true });
-        messageReaction.message.clearReactions();
-        messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-    }
-    if(messageReaction.message.id == r4ID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.channels.find(c => c.name === 'rule-five').overwritePermissions(user, { VIEW_CHANNEL: true });
-        messageReaction.message.clearReactions();
-        messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-    }
-    if(messageReaction.message.id == r5ID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.channels.find(c => c.name === 'we-are-nice-but-not-that-nice').overwritePermissions(user, { VIEW_CHANNEL: true });
-        messageReaction.message.clearReactions();
-        messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-    }
-    if(messageReaction.message.id == attID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.channels.find(c => c.name === 'question-one').overwritePermissions(user, { VIEW_CHANNEL: true });
-        messageReaction.message.clearReactions();
-        messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
-    }
-    if(messageReaction.message.id == q1ID){
-        if(messageReaction.emoji.name == `option2`){
-            messageReaction.message.guild.channels.find(c => c.name === 'question-two').overwritePermissions(user, { VIEW_CHANNEL: true });
-            messageReaction.message.guild.channels.find(c => c.name === 'question-one').permissionOverwrites.get(user.id).delete();
-        }
-        messageReaction.message.clearReactions();
-        await messageReaction.message.react(one).then(messageReaction.message.react(one)).then(messageReaction.message.react(one));
-        await messageReaction.message.react(two).then(messageReaction.message.react(two)).then(messageReaction.message.react(two));
-        await messageReaction.message.react(three).then(messageReaction.message.react(three)).then(messageReaction.message.react(three));
-        await messageReaction.message.react(four).then(messageReaction.message.react(four)).then(messageReaction.message.react(four));
-        await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
-    }
-    if(messageReaction.message.id == q2ID){
-        if(messageReaction.emoji.name == `option1`){
-            messageReaction.message.guild.channels.find(c => c.name === 'question-three').overwritePermissions(user, { VIEW_CHANNEL: true });
-            messageReaction.message.guild.channels.find(c => c.name === 'question-two').permissionOverwrites.get(user.id).delete();
-        }
-        messageReaction.message.clearReactions();
-        await messageReaction.message.react(one).then(messageReaction.message.react(one)).then(messageReaction.message.react(one));
-        await messageReaction.message.react(two).then(messageReaction.message.react(two)).then(messageReaction.message.react(two));
-        await messageReaction.message.react(three).then(messageReaction.message.react(three)).then(messageReaction.message.react(three));
-        await messageReaction.message.react(four).then(messageReaction.message.react(four)).then(messageReaction.message.react(four));
-        await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
-    }
-    if(messageReaction.message.id == q3ID){
-        if(messageReaction.emoji.name == `option1`){
-            messageReaction.message.guild.channels.find(c => c.name === 'thanks-for-reading-the-rules').overwritePermissions(user, { VIEW_CHANNEL: true });
-            messageReaction.message.guild.channels.find(c => c.name === 'welcome').overwritePermissions(user, { VIEW_CHANNEL: false });
-            messageReaction.message.guild.channels.find(c => c.name === 'rule-one').permissionOverwrites.get(user.id).delete();
-            messageReaction.message.guild.channels.find(c => c.name === 'rule-two').permissionOverwrites.get(user.id).delete();
-            messageReaction.message.guild.channels.find(c => c.name === 'rule-three').permissionOverwrites.get(user.id).delete();
-            messageReaction.message.guild.channels.find(c => c.name === 'rule-four').permissionOverwrites.get(user.id).delete();
-            messageReaction.message.guild.channels.find(c => c.name === 'rule-five').permissionOverwrites.get(user.id).delete();
-            messageReaction.message.guild.channels.find(c => c.name === 'we-are-nice-but-not-that-nice').permissionOverwrites.get(user.id).delete();
-            messageReaction.message.guild.channels.find(c => c.name === 'question-three').permissionOverwrites.get(user.id).delete();
-        }
-        messageReaction.message.clearReactions();
-        await messageReaction.message.react(one).then(messageReaction.message.react(one)).then(messageReaction.message.react(one));
-        await messageReaction.message.react(two).then(messageReaction.message.react(two)).then(messageReaction.message.react(two));
-        await messageReaction.message.react(three).then(messageReaction.message.react(three)).then(messageReaction.message.react(three));
-        await messageReaction.message.react(four).then(messageReaction.message.react(four)).then(messageReaction.message.react(four));
-        await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
-    }
+    // if(messageReaction.message.id == r1ID && messageReaction.emoji.name == `yes`){
+    //     messageReaction.message.guild.channels.find(c => c.name === 'rule-two').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //     messageReaction.message.clearReactions();
+    //     messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+    // }
+    // if(messageReaction.message.id == r2ID && messageReaction.emoji.name == `yes`){
+    //     messageReaction.message.guild.channels.find(c => c.name === 'rule-three').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //     messageReaction.message.clearReactions();
+    //     messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+    // }
+    // if(messageReaction.message.id == r3ID && messageReaction.emoji.name == `yes`){
+    //     messageReaction.message.guild.channels.find(c => c.name === 'rule-four').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //     messageReaction.message.clearReactions();
+    //     messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+    // }
+    // if(messageReaction.message.id == r4ID && messageReaction.emoji.name == `yes`){
+    //     messageReaction.message.guild.channels.find(c => c.name === 'rule-five').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //     messageReaction.message.clearReactions();
+    //     messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+    // }
+    // if(messageReaction.message.id == r5ID && messageReaction.emoji.name == `yes`){
+    //     messageReaction.message.guild.channels.find(c => c.name === 'we-are-nice-but-not-that-nice').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //     messageReaction.message.clearReactions();
+    //     messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+    // }
+    // if(messageReaction.message.id == attID && messageReaction.emoji.name == `yes`){
+    //     messageReaction.message.guild.channels.find(c => c.name === 'question-one').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //     messageReaction.message.clearReactions();
+    //     messageReaction.message.react(yes).then(messageReaction.message.react(yes)).then(messageReaction.message.react(yes));
+    // }
+    // if(messageReaction.message.id == q1ID){
+    //     if(messageReaction.emoji.name == `option2`){
+    //         messageReaction.message.guild.channels.find(c => c.name === 'question-two').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //         messageReaction.message.guild.channels.find(c => c.name === 'question-one').permissionOverwrites.get(user.id).delete();
+    //     }
+    //     messageReaction.message.clearReactions();
+    //     await messageReaction.message.react(one).then(messageReaction.message.react(one)).then(messageReaction.message.react(one));
+    //     await messageReaction.message.react(two).then(messageReaction.message.react(two)).then(messageReaction.message.react(two));
+    //     await messageReaction.message.react(three).then(messageReaction.message.react(three)).then(messageReaction.message.react(three));
+    //     await messageReaction.message.react(four).then(messageReaction.message.react(four)).then(messageReaction.message.react(four));
+    //     await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
+    // }
+    // if(messageReaction.message.id == q2ID){
+    //     if(messageReaction.emoji.name == `option1`){
+    //         messageReaction.message.guild.channels.find(c => c.name === 'question-three').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //         messageReaction.message.guild.channels.find(c => c.name === 'question-two').permissionOverwrites.get(user.id).delete();
+    //     }
+    //     messageReaction.message.clearReactions();
+    //     await messageReaction.message.react(one).then(messageReaction.message.react(one)).then(messageReaction.message.react(one));
+    //     await messageReaction.message.react(two).then(messageReaction.message.react(two)).then(messageReaction.message.react(two));
+    //     await messageReaction.message.react(three).then(messageReaction.message.react(three)).then(messageReaction.message.react(three));
+    //     await messageReaction.message.react(four).then(messageReaction.message.react(four)).then(messageReaction.message.react(four));
+    //     await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
+    // }
+    // if(messageReaction.message.id == q3ID){
+    //     if(messageReaction.emoji.name == `option1`){
+    //         messageReaction.message.guild.channels.find(c => c.name === 'thanks-for-reading-the-rules').overwritePermissions(user, { VIEW_CHANNEL: true });
+    //         messageReaction.message.guild.channels.find(c => c.name === 'welcome').overwritePermissions(user, { VIEW_CHANNEL: false });
+    //         messageReaction.message.guild.channels.find(c => c.name === 'rule-one').permissionOverwrites.get(user.id).delete();
+    //         messageReaction.message.guild.channels.find(c => c.name === 'rule-two').permissionOverwrites.get(user.id).delete();
+    //         messageReaction.message.guild.channels.find(c => c.name === 'rule-three').permissionOverwrites.get(user.id).delete();
+    //         messageReaction.message.guild.channels.find(c => c.name === 'rule-four').permissionOverwrites.get(user.id).delete();
+    //         messageReaction.message.guild.channels.find(c => c.name === 'rule-five').permissionOverwrites.get(user.id).delete();
+    //         messageReaction.message.guild.channels.find(c => c.name === 'we-are-nice-but-not-that-nice').permissionOverwrites.get(user.id).delete();
+    //         messageReaction.message.guild.channels.find(c => c.name === 'question-three').permissionOverwrites.get(user.id).delete();
+    //     }
+    //     messageReaction.message.clearReactions();
+    //     await messageReaction.message.react(one).then(messageReaction.message.react(one)).then(messageReaction.message.react(one));
+    //     await messageReaction.message.react(two).then(messageReaction.message.react(two)).then(messageReaction.message.react(two));
+    //     await messageReaction.message.react(three).then(messageReaction.message.react(three)).then(messageReaction.message.react(three));
+    //     await messageReaction.message.react(four).then(messageReaction.message.react(four)).then(messageReaction.message.react(four));
+    //     await messageReaction.message.react(five).then(messageReaction.message.react(five)).then(messageReaction.message.react(five));
+    // }
     if(messageReaction.message.id == thanksID && messageReaction.emoji.name == `yes`){
         messageReaction.message.guild.channels.find(c => c.name === 'welcome').permissionOverwrites.get(user.id).delete();
         messageReaction.message.guild.channels.find(c => c.name === 'thanks-for-reading-the-rules').permissionOverwrites.get(user.id).delete();

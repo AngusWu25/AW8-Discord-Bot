@@ -180,5 +180,6 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
     }
     if(messageReaction.message.id == vocitusID && messageReaction.emoji.name == `yes`){
         messageReaction.message.guild.member(user).addRole(vocitus).catch(console.error);
+        console.log('testing');
     }
 });

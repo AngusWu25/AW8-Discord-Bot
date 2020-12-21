@@ -179,7 +179,7 @@ bot.on('messageReactionAdd', async (messageReaction, user) => {
         }
     }
     if(messageReaction.message.id == vocitusID && messageReaction.emoji.name == `yes`){
-        messageReaction.message.guild.member(user).addRole(vocitus).catch(console.error);
+        messageReaction.message.guild.member(user).roles.cache.find(role => role.name == "Project Vocitus").catch(console.error);
         console.log('testing');
     }
 });

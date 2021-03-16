@@ -14,7 +14,8 @@ module.exports.run = async (bot, message, args) => {
                 "The best things in life are free. Actually, everything is free if you run from the store fast enough. (don't do it!)",
                 "Shoot for the moon. Even if you miss, you'll land among the stars and die alone in the dark, infinite void of space.",
                 "Dance like there's nobody watching. It's free entertainment for the rest of us!",
-                "Teamwork is essential to success - it allows you to blame someone else."];
+                "Teamwork is essential to success - it allows you to blame someone else.",
+                "Give a man a plane ticket, he flies for a day. Throw a man out of a plane, he flies for the rest of his life."];
 
     message.channel.send(quote[Math.floor(Math.random() * (quote.length))]);
 

@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
                 "Shoot for the moon. Even if you miss, you'll land among the stars and die alone in the dark, infinite void of space.",
                 "Dance like there's nobody watching. It's free entertainment for the rest of us!",
                 "Teamwork is essential to success - it allows you to blame someone else.",
-                "Give a man a plane ticket, he flies for a day. Throw a man out of a plane, he flies for the rest of his life."];
+                "Give a man a plane ticket, he flies for a day. Throw a man out of a plane, he flies for the rest of his life. -#78375"];
 
     message.channel.send(quote[Math.floor(Math.random() * (quote.length))]);
 

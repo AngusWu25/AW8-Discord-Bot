@@ -3,7 +3,7 @@ const bot = require("../index.js");
 
 bot.on("ready", async () => {
     console.log('bot is online!');
-    bot.user.setActivity("Fake A Smile", {type: "LISTENING"});
+    bot.user.setActivity("Dead Girl", {type: "LISTENING"});
 
     // bot.channels.forEach(channel => channel.fetchMessages({ limit: 100 })
     //     .then(messages => console.log(`Received ${messages.size} messages`))

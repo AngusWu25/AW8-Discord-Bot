@@ -1,5 +1,5 @@
 # Custom Discord Bot for Alan Walker Theories
-Alan Walker Theories (AWT) is a community two co-founders and I created to unite the fans who geek about the technicalities of the 14-Platinum DJ Alan Walker's cinematic universe.
+Alan Walker Theories (AWT) is a community two co-founders (#379 and #4684) and I (#431) created to unite the fans who geek about the technicalities of the 14-Platinum DJ Alan Walker's cinematic universe.
 
 The server had over 500 active members at its peak, but is currently out of commission.
 
